@@ -58,11 +58,14 @@ nav ul li a:hover{
 
 header{
 
-	background-image:url("images/conference.jpg");
+	background-image:url("image/home01.jpg");
+	background-size: 1100px;
+	background-position: -50px;
 	width:1000px;
 	height:500px;
 	position: relative;
 	overflow:hidden;
+	background-repeat: no-repeat;
 
 
 }
@@ -108,9 +111,7 @@ button:hover{
 section{
 	padding-top:40px;
 	padding-bottom: 20px;
-	padding-left:100px;
-	padding-right:100px;
-}
+	}
 
 span{
 	margin-bottom: 20px;
@@ -118,7 +119,7 @@ span{
 }
 
 article{
-	width:800px;
+	width:1000px;
 	height:160px;
 	padding:10px 0px;
 	
@@ -142,8 +143,8 @@ h3{
 
 article p{
 	float:left;
-	padding:20px 15px;
-	width:615px;
+	padding:20px 5px;
+	width:840px;
 	height:100px;
 	background-color: #D8D8D8;
 	margin-left: 5px;
