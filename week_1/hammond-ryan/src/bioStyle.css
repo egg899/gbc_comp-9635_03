@@ -11,13 +11,19 @@ p {
 	color: #fff;
 }
 
+a {
+	color: #D1D1FF;
+	font-weight: bold;
+}
+
 .container {
 	width: 1024px;
 	height: 100%;
 	margin: 0 auto;
 	background-color: #595959;
-	padding: 10px 20px;
+	padding: 30px 20px 10px 20px;
 	border-top: 5px solid #FFFF00;
+	font-family: 'Roboto', sans-serif;
 }
 
 .about {
@@ -35,7 +41,7 @@ img {
 	border: 5px solid #fff;
     border-radius: 4px;
     padding:0;
-    width: 250px;
+    width: 200px;
 }
 
 .ryan {
@@ -56,4 +62,10 @@ img {
 .miniBio {
 	color:#FFFF00;
 	font-size: 16px; 
+}
+
+#noRyan {
+	display:none;
+	color:#FFFF00;
+	font-size: 150px;
 }
