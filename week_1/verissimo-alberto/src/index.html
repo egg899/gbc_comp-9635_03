@@ -2,26 +2,36 @@
 <html>
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script>
 $(document).ready(function(){
 $("#msg").hide();
   $("#btn").click(function(){
-      $("#msg").slideDown();
+      $("#msg").slideToggle();
   })
 })
   </script>
+  <style>
+
+  </style>
 <title>About me</title>
 </head>
 
 <body>
-<h1>Hello !!!</h1>
+<div class="container">
+  <h1>Hello There!!!</h1>
 <p>My name is Alberto, I am interested in front-end web development and
   technologies such as <strong>HTML, CSS and Javascript</strong></p>
+  
+<img src="http://toronto.hispanocity.com/sites/default/files/styles/noticia-slide-big/public/media/Noticias-11149-p18thrtbnmna7ft81k59i191s5n4.jpg?itok=liB7fKuv"/>
+</br>
+</br>
 
   <button id="btn">Click me</button>
   <div id="msg">This is my latest jQuery project:
 <a href="https://codepen.io/Albertin89/pen/GyWZOP" target=a_blank>Simon Game</a>
   </div>
+</div>
 </body>
 
 </html>
