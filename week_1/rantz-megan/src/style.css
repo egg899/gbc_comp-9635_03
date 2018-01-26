@@ -47,6 +47,16 @@ table {
 	border-spacing: 0;
 }
 
+
+@keyframes cool {
+	0%{background-color: #FF513A;}
+	20%{background-color: red;}
+	40%{background-color: salmon;}
+	60%{background-color: pink;}
+	80%{background-color: crimson;}
+	100%{background-color: #FF513A;}
+}
+
 #hello {
 	display: flex;
 	flex-direction: row;
@@ -63,8 +73,36 @@ h1 {
 	color: #FF513A;
 	font-size: 100pt;
 	padding-top: 250px;
+	animation-name: cool;
 }
 
 #yellow {
 	height: 700px;
+}
+
+nav {
+  background-color: #FF513A;
+  height: 100px;
+  display: flex;
+  flex-direction: row-reverse;}
+
+
+ nav:hover  {animation-name: cool;
+	animation-duration: 12s;
+	animation-iteration-count: infinite;
+}
+
+li {
+  display: inline;
+  line-height: 100px;
+  font-family: arial;
+  font-size: 1.5em;
+  color: white;
+  margin: 20px;
+}
+
+
+li:hover {
+color: black;
+transform: scale(1.8);
 }
