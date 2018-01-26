@@ -2,8 +2,62 @@
 <html>
 	<head>
 		<title> Hello </title>
+
+		<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+
+
+		<style type="text/css">
+			h1{ color: pink; 
+				font-size: 40px;
+				font-family: arial;
+				font-weight: bold;
+				background-color: purple;
+			}
+			p{ font-family: helvetica; 
+			}
+			h2{font-size: 22px;
+				font-family: 'Slabo 27px', serif;
+			}
+			body{ 
+				text-align: center;
+				}
+			
+			.container{
+				width:1040px;
+  				margin:0 auto;
+  				border: solid purple 1px;
+  				padding: 40px;
+			}
+
+			.title{
+			  margin-bottom: 45px;
+			  margin-top: 20px;
+			  cursor:pointer;
+			}
+
+			.image1{
+			  display: none;
+			}
+
+		</style>
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script>
+			
+			$('.title').on('click', function(e){
+      			e.preventDefault(); 
+    		$(this).next('.image1').slideToggle();
+    		});
+
+
+		</script>
+
+
+
 	</head>
 	<body>
+		<div class="container">
 		<h1> My name : Celine Aumas</h1>
 
 
@@ -15,9 +69,10 @@
 
 
 			<h2> I WANT TO GO TO THE SUN PRETTY BAD AND REMEMBER WHAT WARMTH IS LIKE </h2>
-				<P> Somewhere like this.</P>
+				<P class="title"> Somewhere like this (click here).</P>
 
-		<p> <image src="https://www.mrandmrssmith.com/wanderlist/images/tulum-mexico/HERO.jpg" width="1000">
-
+		 <image class="image1" src="https://www.mrandmrssmith.com/wanderlist/images/tulum-mexico/HERO.jpg" width="1000"></image>
+		
+		</div>
 	</body>
 </html>
