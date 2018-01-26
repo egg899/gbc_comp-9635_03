@@ -1,4 +1,32 @@
-.container{
-	width: 80%;
+body{
+
+	background-color: #f7faff;
 
 }
+
+
+h1, h2, h3, h4, h5, h6{
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-weight: 700;
+
+}
+
+p{
+	font-family: Geneva, Tahoma, Verdana, sans-serif;
+	font-size: 1rem;
+}
+
+
+.headingBox{
+	padding: 2rem;
+}
+
+.container{
+	width: 80%;
+}
+
+.box{
+	background-color: #fff;
+}
+
+
