@@ -18,20 +18,27 @@ body{font-family: 'Oswald', sans-serif;}
   font-size: 16px;
 }
 
-
+.black{
+  color:white;
+  background-color: black;
+}
+#btn{
+  color:grey;
+}
 
   </style>
 <title>About me</title>
 </head>
 
 <body>
-
+<section class="black">
 <div class="container container-fluid">
   <h1>Alberto Verissimo</h1>
 <p id="intro">My name is Alberto, I am interested in front-end web development and
   technologies such as <strong>HTML, CSS and Javascript</strong></p>
 </br>
-
+</div><!--container--></section>
+  <div class="container container-fluid">
 <h2>I am the guy with the guitar by the way</h2>
 <img class="jumbotron" src="http://toronto.hispanocity.com/sites/default/files/styles/noticia-slide-big/public/media/Noticias-11149-p18thrtbnmna7ft81k59i191s5n4.jpg?itok=liB7fKuv"/>
 </br>
@@ -39,12 +46,15 @@ body{font-family: 'Oswald', sans-serif;}
 <blockquote>
   <p><em>My band is called TYD</em></p>
 </blockquote>
+</div><!--container-->
 
+  <section class="black">
+  <div class="container container-fluid">
 <h2>Now lets talk about me</h2>
 <div class="row">
 <img class="col-sm-4" src="http://www.adworld.ie/wp-content/uploads/2018/01/media.png" alt="media"/>
 <p id="description" class="col-sm-4">I like playing the guitar and learning everything related to technology, before coming to George brown I did some other kind of things
-related to media such as: graphic design, digital design, vido editing and animation.
+related to media such as: <strong>graphic design, digital design, vido editing and animation.</strong>
 </br>
 </br>
 </p>
@@ -55,12 +65,15 @@ related to media such as: graphic design, digital design, vido editing and anima
 </div><!--row-->
 <div class="clearfix"></div>
 </br>
-  <button id="btn">Click me</button>
+  <button id="btn" class="btn .btn-default">Click me</button>
 
   <div id="msg">This is my latest jQuery project:
 <a href="https://codepen.io/Albertin89/pen/GyWZOP" target=a_blank>Simon Game</a>
   </div><!--msg-->
 </div><!--container-->
+</br>
+</section>
+
 </body>
 
 </html>
