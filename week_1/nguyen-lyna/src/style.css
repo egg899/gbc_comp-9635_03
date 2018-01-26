@@ -1,0 +1,26 @@
+/*Light gray background*/
+body {
+  background-color: #EDEDED !important;
+}
+div.container {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  margin: 20px;
+}
+/*Fade effect*/
+div.container img {
+  border: 2px solid #DB0F0F;
+  width: 50%;
+  transition: all 1s ease;
+  cursor: pointer;
+}
+div.container img:hover {
+  width: 52%;
+  opacity: 0.75;
+}
+div.container p, div.container img {
+  margin: 20px;
+}
+div.container h1 {
+  color: #DB0F0F;
+}
