@@ -36,5 +36,18 @@ img.center {
 	padding: 1.5em;
 }
 
+@media (max-width: 576px) { 
+	h1{
+	font-size: 12px;}
+}
 
 
+@media (min-width: 768px) {
+	
+}
+
+@media (min-width: 992px) { 
+ }
+
+@media (min-width: 1200px) {
+	}
