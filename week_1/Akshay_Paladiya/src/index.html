@@ -1,8 +1,170 @@
 <html>
+
 <head>
-<title> First</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/portfolio.js"></script>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
-<body>
-<h1>Here you go</h1>
+
+<body class="text-center" data-spy="scroll" data-target=".navbar" data-offset="180">
+  <div id="#wrapper" class="">
+    <!-- navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="toggled" data-target="#wrapper">
+            <i class="fa fa-bars"></i>
+          </button>
+          <a class="navbar-brand" href="http://dan.motiongear.org/blog" target="_blank" title="Check out my site">Dandan Lim</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <div class="container">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div id="nav-side-wrapper">
+      <div class="container">
+        <ul class="nav-side">
+
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="content-wrapper">
+      <!-- front page -->
+      <section id="home" class="jumbotron vertical-centre bgd shadow" data-speed="5" data-type="background">
+        <div class="container">
+          <h1>My name is Dandan Lim.</h1>
+          <h3>Strappin’ some boots.</h3>
+          <p>
+            <a href="https://twitter.com/caeldom" target="_blank" title="Twitter profile" class="btn btn-default btn-lg">
+              <i class="fa fa-twitter"></i>@caeldom
+            </a>
+            <a href="https://linkedin.com/in/dandanlim" target="_blank" title="LinkedIn profile" class="btn btn-default btn-lg">
+              <i class="fa fa-linkedin-square"></i>LinkedIn
+            </a>
+            <a href="https://github.com/caeldom" target="_blank" title="GitHub profile" class="btn btn-default btn-lg">
+              <i class="fa fa-github"></i>GitHub
+            </a>
+            <a href="https://freecodecamp.com/caeldom" target="_blank" title="FreeCodeCamp profile" class="btn btn-default btn-lg">
+              <i class="fa fa-fire"></i>FreeCodeCamp
+            </a>
+          </p>
+        </div>
+
+      </section>
+
+      <!-- about -->
+      <section id="about">
+        <div class="container">
+
+          <div class="col-sm-12">
+            <h1 class="page-header">What’s This?</h1>
+            <p>This is my design of a modern portfolio using the Bootstrap 3 framework. I intend to eventually incorporate this prototype into my personal site.</p>
+            <h3>Free Latin!</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum, enim at varius maximus, augue quam ullamcorper tortor, vel consequat nibh massa eu enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+              Curae; Integer molestie in massa in vehicula. Nullam id risus a velit vulputate egestas vitae interdum massa. Duis id facilisis nibh. Praesent ac sem in est blandit tincidunt. Morbi finibus, turpis dignissim accumsan dictum, est nunc interdum
+              augue, id ultricies velit sem sed metus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sagittis lectus in dolor efficitur tincidunt. Etiam ullamcorper vestibulum rhoncus.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- portfolio -->
+      <section id="portfolio" class="bgd shadow" data-speed="5" data-type="background">
+        <div class="container">
+          <h1 class="page-header">Portfolio</h1>
+          <h3>Oh look, stuff!</h3>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <img />
+                <p><strong>Project 1</strong></p>
+                <p>Meaningful description</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <img />
+                <p><strong>Project 2</strong></p>
+                <p>Another meaningful description</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <img />
+                <p><strong>Project 3</strong></p>
+                <p>Not a meaningful description</p>
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <!-- contact -->
+      <section id="contact">
+        <div class="container">
+          <h1 class="page-header">Say Hi!</h1>
+          <h3>I won’t bite, I promise. <small>No really!</small></h3>
+          <div class="row">
+            <div class="col-sm-5">
+              <p>Contact me and I’ll get back to you within a day.</p>
+              <p><i class="glyphicon glyphicon-map-marker"></i> Sydney, Australia</p>
+              <p><i class="glyphicon glyphicon-phone"></i> +61 432 949 360</p>
+              <p><i class="glyphicon glyphicon-envelope"></i> email@domain.com</p>
+            </div>
+            <div class="col-sm-7">
+              <form role="form" id="contact-form">
+                <div class="row">
+                  <div class="col-sm-6 form-group">
+                    <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                  </div>
+                  <div class="col-sm-6 form-group">
+                    <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" id="message" name="message" placeholder="Message" rows="5"></textarea>
+                </div>
+                <button id="form-submit" class="btn btn-success btn-md pull-right" type="submit">Send</button>
+                <div id="form-feedback" class="pull-right text-right">Message sent!
+                  <br><small>(not really, it's a demo)</small></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="container-fluid">
+        <a class="top" href="#home" title="Back to top">
+          <p><i class="glyphicon glyphicon-chevron-up"></i>
+            <br>Back to top</p>
+        </a>
+        <small>Theme designed by <a href="http://dan.motiongear.org/blog" target="_blank" title="Check me out">Dandan Lim</a> using Bootstrap
+    </small>
+      </footer>
+      </div>
+    </div>
 </body>
+
 </html>
