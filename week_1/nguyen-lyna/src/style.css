@@ -1,13 +1,12 @@
 /*Light gray background*/
-body {
-  background-color: #EDEDED !important;
-}
+body { background-color: #EDEDED !important; }
+
 div.container {
   font-family: 'Roboto', sans-serif;
   font-size: 2rem;
   margin: 20px;
 }
-/*Fade effect*/
+/* Image - Fade effect*/
 div.container img {
   border: 2px solid #DB0F0F;
   width: 50%;
@@ -18,22 +17,33 @@ div.container img:hover {
   width: 52%;
   opacity: 0.75;
 }
-div.container p, div.container img {
-  margin: 20px;
-}
+div.container p, div.container img { margin: 20px; }
+
 div.container h1 {
   color: #DB0F0F;
+  font-size: 5rem;
 }
 
-div.container .btn-info {
+/*Bootstrap button*/
+div.container .btn-resume {
+    font-size: 2rem;
     color: #fff;
-    background-color: #DB0F0F;
-    border-color: #000;
+    background-color: red;
+    border-radius: 7px;
     padding: 1.5rem 5rem;
     transition: all 0.5s ease;
 }
-div.container .btn-info:hover {
-  color: #DB0F0F;
-  background-color: #fff;
-  border-color: #000;
+div.container .btn-resume:hover {
+  color: #fc7171;
+  background-color: #fc7171;
+}
+a.btn.btn-resume { color: #fff; }
+a.btn.btn-resume:hover { color: #000; }
+
+/*Font Awesome Icon*/
+.fa {
+  color: red;
+}
+.fa:hover {
+  color: #fc7171;
 }
