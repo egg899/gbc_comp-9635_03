@@ -4,9 +4,13 @@
 	padding-bottom: 70px;
 	
 }
+
+
 .main-fill{
 	background-color: #EFEBD2;
 }
+
+
 .main-section {
 
 
@@ -22,8 +26,20 @@
 
 {
 	text-align: center;
+	
 }
 
+.fa-volume-control-phone,.fa-envelope{
+	font-size: 200%;
+	
+}
+
+.div-center
+
+{
+	text-align: center;
+	
+}
 .align-content-text{
 
 	padding-left: 75px;
@@ -75,8 +91,17 @@
 
 		
 	}
-	
 
+	.fa-volume-control-phone,.fa-envelope{
+		
+		font-size: 150%;
+	}
+
+     .div-center
+		{
+			text-align: center;
+			
+		}
 }
 
 .navbar {
