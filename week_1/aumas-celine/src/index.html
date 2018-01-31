@@ -1,23 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<title> Hello </title>
-
-		<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+<head>
 
 
-		<style type="text/css">
+<style type="text/css">
 			h1{ color: pink; 
 				font-size: 40px;
 				font-family: arial;
 				font-weight: bold;
 				background-color: purple;
 			}
+			
 			p{ font-family: helvetica; 
 			}
+			
 			h2{font-size: 22px;
 				font-family: 'Slabo 27px', serif;
 			}
+
 			body{ 
 				text-align: center;
 				}
@@ -35,29 +35,33 @@
 			  cursor:pointer;
 			}
 
-			.image1{
+			img{
 			  display: none;
+			  width: 1000px;
 			}
 
-		</style>
+			button { margin-bottom: 15px; }
 
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script>
-			
-			$('.title').on('click', function(e){
-      			e.preventDefault(); 
-    		$(this).next('.image1').slideToggle();
-    		});
-
-
-		</script>
+</style>			
 
 
 
-	</head>
-	<body>
-		<div class="container">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+    $("#hide").click(function(){
+        $("img").hide();
+    });
+    $("#show").click(function(){
+        $("img").show();
+    });
+});
+</script>
+</head>
+<body>
+
+	<div class="container">
 		<h1> My name : Celine Aumas</h1>
 
 
@@ -69,10 +73,20 @@
 
 
 			<h2> I WANT TO GO TO THE SUN PRETTY BAD AND REMEMBER WHAT WARMTH IS LIKE </h2>
-				<P class="title"> Somewhere like this (click here).</P>
+				<P class="title"> Somewhere like below</P>
 
-		 <image class="image1" src="https://www.mrandmrssmith.com/wanderlist/images/tulum-mexico/HERO.jpg" width="1000"></image>
-		
+				<button id="hide">Hide</button>
+				<button id="show">Show</button>
+ 					<img src="https://www.mrandmrssmith.com/wanderlist/images/tulum-mexico/HERO.jpg" >
+
+
 		</div>
-	</body>
+
+
+
+
+
+
+
+</body>
 </html>
