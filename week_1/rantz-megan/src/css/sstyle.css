@@ -159,8 +159,34 @@ li {
 
 
 li:hover {
-color: mediumseagreen;
-transform: scale(1.8);
+color: palevioletred;
+font-size: 1.53em;
+}
+
+.more {
+	height: 200px;
+	background-color: lightsalmon;
+	font-family: arial, sans-serif;
+	color: white;
+	font-size: 26pt;
+	border: 6px solid salmon;
+}
+
+.more p {
+	padding: 35px;
+}
+
+.less {
+	height: 200px;
+	background-color: lightsalmon;
+	font-family: arial, sans-serif;
+	color: white;
+	font-size: 26pt;
+	border: 6px solid salmon
+}
+
+.less p {
+	padding: 35px;
 }
 /********************************
 *********************************
