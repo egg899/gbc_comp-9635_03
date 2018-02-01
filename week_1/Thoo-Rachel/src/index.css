@@ -86,16 +86,18 @@ header h2{
 	height:245px;
 	background: rgba(155, 89, 186, 0.85);
 	color:#fff;
-	padding-top:30px;
+	padding-top:35px;
 	padding-left: 20px;
 	position: absolute;
 	top:235px;
+	border-radius:20px;
 	
 }
 
+
 button{
 	color:#fff;
-	background: rgba(155, 89, 186, 0);
+	background:rgba(155, 89, 186, 0);
 	width:130px;
 	padding:5px;
 	border-radius:5px;
@@ -111,6 +113,7 @@ button:hover{
 section{
 	padding-top:40px;
 	padding-bottom: 20px;
+	margin-bottom: 10px;
 	}
 
 span{
@@ -121,7 +124,7 @@ span{
 article{
 	width:1000px;
 	height:160px;
-	padding:10px 0px;
+	padding:5px 0px;
 	
 
 }
@@ -133,9 +136,9 @@ section h2{
 h3{
 	float:left;
 	width:120px;
-	height: 70px;
+	height: 80px;
 	padding:10px;
-	padding-top: 60px;
+	padding-top: 50px;
 	background-color: rgb(155, 89, 186);
 	color: white;
 	text-align: center;
@@ -150,3 +153,52 @@ article p{
 	margin-left: 5px;
 }
 
+#map {
+   width: 450px;
+   height:300px;
+   background-color: grey;
+   float:right;
+   position: absolute;
+ 	left: 568px;
+	top: 1220px;
+
+ }
+
+form{
+	width:auto;
+	height:350px;
+	border: solid 2px #D8D8D8;
+	padding-left: 40px;
+	padding-top: 11px;
+	
+}
+
+textarea{
+	height:180px;
+	width: 440px; 
+}
+ 
+input{
+	padding: 0px 10px; 
+	color:#fff;
+	background:#9b59b6;
+	width:130px;
+	height:30px;
+	border-radius:5px;
+	font-size:15px;
+	margin-left: -2px;
+
+}
+
+footer{
+	clear:both;
+	background-color:#9b59b6;
+	text-align:left;
+  font-weight:bold;
+  color:white; 
+  height:30px;
+  width:auto;
+  padding-top:10px;
+  padding-left: 10px;
+  top:1550px;
+}
