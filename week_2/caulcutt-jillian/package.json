@@ -1,0 +1,11 @@
+{
+  "name": "caulcutt-jillian",
+  "version": "1.0.0",
+  "description": "Week 2 inclass presentation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
