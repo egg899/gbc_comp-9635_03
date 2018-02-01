@@ -1,4 +1,4 @@
-Weed 2
+Week 2
 ======
 
 <<<<<<< HEAD
@@ -10,4 +10,11 @@ Follow instructions in class or copy starter project from `week_2/tennant-calvin
 04. Switch remote back to your fork of this repository.
 05. Follow instructions in class or copy starter project from `week_2/tennant-calvin`
 >>>>>>> aab7e6065378cd6422a2d3397095618e471916d3
+
+Issue with `usr/local` being not writable after installing node
+---------------------------------------------------------------
+01. `sudo chown -R $(whoami) /usr/local`
+02. `brew uninstall node`
+03. `brew install node`
+
 
