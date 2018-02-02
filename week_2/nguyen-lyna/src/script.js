@@ -1,3 +1,18 @@
-$(document).ready(function() {
-  
+// GOOGLE MAPS API
+console.log(google);
+google.maps.event.addDomListener(window, 'load', function() {
+  console.log("Page is loaded")
+  // Navigator geolocation based on GPS
+  navigator.geolocation.getCurrentPosition(function(position) {
+    console.log(position);
+    var map_canvas = document.getElementById('map-canvas')
+    var lat = position.coords.latitude
+    var lng = position.coords.longitude
+    var myLatLng = new google.maps.LatLng(lat, lng)
+    var myMap = new google.maps.Map(map_canvas, {
+      zoom: 15,
+      center: myLatLng,
+    })
+    console.log(myLatLng)
+  });
 });
