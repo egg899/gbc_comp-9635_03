@@ -13,6 +13,10 @@ google.maps.event.addDomListener(window, 'load', function() {
       zoom: 15,
       center: myLatLng,
     })
+    new google.maps.Marker({
+      position: myLatLng,
+      map: myMap,
+    })
     console.log(myLatLng)
   });
 });
