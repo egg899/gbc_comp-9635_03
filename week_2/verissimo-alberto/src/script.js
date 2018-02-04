@@ -1,35 +1,12 @@
 
-$(document).ready(function(){
 
+google.maps.event.addDomListener(window, 'load', function(){
 
 console.log(google);
 
 
 function map(){
-  /*var myHouse = {lat:-34.7784272, lng:-58.2694053};
-  var marDelPlata ={lat:-38.0174836, lng:-57.7406184};
-  var map_canvas = document.getElementById('map-canvas');
 
-
-  var myMap = new google.maps.Map(map_canvas, {
-    zoom:5,
-    center:myHouse,
-
-
-  });//myMap
-
-
-  var marker = new google.maps.Marker({
-    //position:myHouseLatLng,
-    position:myHouse,
-    map:myMap,
-  });//Marker
-
-var marker2 = new google.maps.Marker({
-  position:marDelPlata,
-  map:myMap,
-})//marker2
-*/
 
 var locations=[{lat:-34.7784272, lng:-58.2694053},
           {lat:-34.7788589, lng:-58.2692429}];
@@ -42,65 +19,73 @@ var myMap = new google.maps.Map(map_canvas, {
 
 });//myMap
 
-//Event listener for myMap
-myMap.addListener('center_changed', function(){
-  window.setTimeout(function(){
-    myMap.panTo(marker.getPosition());
-  },3000);
+
+var marker = new google.maps.Marker({
+
+  position:locations[0],
+  map:myMap,
+  radius:30,
+
+
+})//marker
+
+var markerb = new google.maps.Marker({
+
+position:locations[1],
+
+map:myMap,
+radius:30,
+
+
+})//markerb
+
+//Event listener for marker
+marker.addListener('click',function(){
+  myMap.setZoom(18);
+
+  housewindow.open(myMap, marker);
+  schoolwindow.close(myMap, markerb);
+$("#bio").html("<p>This is the house that I lived most of my childhood and all my teenage years. it is located in a city called Florencio Varela in the Province of Buenos Aires, Argentina. My mother and my 2 sisters still live there, I go to visit this place once every 2 years.</p>");
+});
+
+markerb.addListener('click',function(){
+  myMap.setZoom(18);
+
+  schoolwindow.open(myMap, markerb);
+  housewindow.close(myMap, marker);
+  $("#bio").html("<p>This is my Elementary school and I studied here for 7 years before going to High School </p>")
 });
 
 
 
 
 
-for(var i=0;i<locations.length;i++){
-  var marker = new google.maps.Circle({
-    strokeColor: '#FF0000',
-            strokeOpacity: 0.8,
-            strokeWeight: 2,
-            fillColor: '#FF0000',
-            fillOpacity: 0.35,
-    center:locations[i],
-    map:myMap,
-    radius:30,
-  })//marker
-
-
-  //Event listener for marker
-  marker.addListener('click',function(){
-    myMap.setZoom(18);
-    myMap.setCenter(marker.getPosition());
-  });
-
-}//for
 
 
 
 
-//coordinates Information
-var coordInfoWindow = new google.maps.InfoWindow();
-coordInfoWindow.setContent()
+var house = '<div id="content">'+
+'<h1>My House</h1>'
++'</div>';
+var school = '<div id="content">'+
+'<p>My school <b>Instituto Manuel Belgrano</b></p>'
++'</div>';
+
+var housewindow = new google.maps.InfoWindow({
+content:house
+});
+
+var schoolwindow = new google.maps.InfoWindow({
+content:school
+});
 
 
-
-//Tile
-var TILE_SIZE=256;
-function createInfoWindowContent(latLng, zoom){
-  var scale= 1<<zoom;
-  var worldCoordinate = project(latLng);
-  var pixelCooridinate = new google.maps.Point(
-    Math.floor(worldCoordinate.x * scale),
-    Math.floor(worldCoordinate.y * scale)
-  );//PixelCoordinate
-
-  var tileCoordinate
-
-}
 
 
 }// function map
-
 map();
+
+
 /*google.maps.event.addDomListener(window, 'load', function(){
   //console.log('page is loaded');
   navigator.geolocation.getCurrentPosition(function(position){
