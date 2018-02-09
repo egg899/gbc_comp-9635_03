@@ -4,21 +4,21 @@ google.maps.event.addDomListener(window, 'load', function() {
   var travelled = [
     {
       name: '<h2>San Francisco, California</h2>',
-      description: '<p><b>San Francisco</b> the first city I have travelled to with friends. <a target="_blank" href="https://en.wikipedia.org/wiki/San_Francisco" title="San Francisco">San Francisco</a>. Here, I got to explore the Piers. The most well known pier is <a target="_blank" "href="https://en.wikipedia.org/wiki/Pier_39">Pier 39</a>. My friends and I had ridden the <a target="_blank" href="https://en.wikipedia.org/wiki/San_Francisco_cable_car_system">cable cars</a> and explored the largest Gay Village in the world, <a target="_blank" href="https://en.wikipedia.org/wiki/Castro_District,_San_Francisco">Castro District.</p>',
+      description: '<p><b>San Francisco</b> the first city I have travelled to with friends. <a target="_blank" href="https://en.wikipedia.org/wiki/San_Francisco" title="San Francisco">San Francisco</a>. Here, I got to explore the Piers. The most well known pier is <a target="_blank" "href="https://en.wikipedia.org/wiki/Pier_39">Pier 39</a>. My friends and I had ridden the famous <a target="_blank" href="https://en.wikipedia.org/wiki/San_Francisco_cable_car_system">cable cars</a> and explored the largest Gay Village in the world, <a target="_blank" href="https://en.wikipedia.org/wiki/Castro_District,_San_Francisco">Castro District.</p>',
       image: '<img src="https://i.imgur.com/3qul073.jpg"/img>',
       lat: '37.757815',
-      lng: '-122.5076393',
+      lng: '-122.5076393'
     },
     {
       name: '<h2>Chicago, Illinois</h2>',
-      description: '<p><b>Chicago</b> was a city I travelled to for work with the WE Day team. <a target="_blank" href="https://en.wikipedia.org/wiki/Chicago" title="Chicago">Chicago</a>. Here, I got to see Second City sketch comedy show for the first time. I have had their famous <a target="_blank" href="https://en.wikipedia.org/wiki/Chicago-style_pizza">deep dish pizza</a> at <a target="_blank" "href="https://giordanos.com/">Giordano&#39;s</a>. Also had the pleasure to see the <a target="_blank" href="https://www.architecture.org/experience-caf/tours/detail/chicago-architecture-foundation-river-cruise-aboard-chicagos-first-lady-cruises/">Architecture Boat Tour</a> and watched the <a target="_blank" href="https://www.youtube.com/watch?v=zNLNsSVFtLA">Floyd Mayweather Jr. vs. Manny Pacquiao fight</a> at the University of Illinios</p>',
+      description: '<p><b>Chicago</b> was a city I travelled to for work with the <a target="_blank" href="https://www.youtube.com/watch?v=eqtzsIEn-lg">WE Day</a> team. <a target="_blank" href="https://en.wikipedia.org/wiki/Chicago" title="Chicago">Chicago</a>. I was lucky to have experienced great food, amazing architecture, and first home to <a target="_blank" href="https://en.wikipedia.org/wiki/The_Second_City">Second City</a>, sketch comedy show for the first time. <a target="_blank" "href="https://giordanos.com/">Giordano&#39;s</a>, Chicago&#39;s <a target="_blank" href="https://en.wikipedia.org/wiki/Chicago-style_pizza">deep dish pizza</a>. Also had the pleasure to see the <a target="_blank" href="https://www.architecture.org/experience-caf/tours/detail/chicago-architecture-foundation-river-cruise-aboard-chicagos-first-lady-cruises/">Architecture Boat Tour</a> and watched the <a target="_blank" href="https://www.youtube.com/watch?v=zNLNsSVFtLA">Floyd Mayweather Jr. vs. Manny Pacquiao fight</a> at the University of Illinios.</p>',
       image: '<img src="https://i.imgur.com/QuS0hnC.jpg"/img>',
       lat: '41.8339037',
       lng: '-87.872045',
     },
     {
       name: '<h2>Maui, Hawaii</h2>',
-      description: '<p><b>Maui</b> was one of the most beautiful places I have been to in the world. <a target="_blank" href="https://en.wikipedia.org/wiki/Maui" title="Maui">Maui</a>. In Hawaii, I had the pleasure to learn the basics of <a target="_blank" href="http://www.surfing-waves.com/atlas/north_america/hawaii.html">surfing</a> and playing the <a target="_blank" href="https://www.youtube.com/watch?v=sxEuq32tI5s">Ukulele</a>. </p>',
+      description: '<p><b>Maui</b> was one of the most beautiful places I have been to in the world. <a target="_blank" href="https://en.wikipedia.org/wiki/Maui" title="Maui">Maui</a>. In Hawaii, I had the pleasure to learn the basics of <a target="_blank" href="http://www.surfing-waves.com/atlas/north_america/hawaii.html">surfing</a> and playing the <a target="_blank" href="https://www.youtube.com/watch?v=sxEuq32tI5s">Ukulele</a>.</p>',
       image: '<img src="https://i.imgur.com/dt5yZJg.jpg"/img>',
       lat: '20.8034103',
       lng: '-156.6181603',
@@ -39,11 +39,10 @@ google.maps.event.addDomListener(window, 'load', function() {
     },
   ];
 
-
-  var latlng = new google.maps.LatLng('45.188713', '-109.5543477');
+  var latlng = new google.maps.LatLng('32.2760602', '-164.4861343');
   var mapOptions = {
     center: latlng,
-    zoom: 4
+    zoom: 3
   };
 
   // Loop travelled cities
@@ -59,7 +58,8 @@ google.maps.event.addDomListener(window, 'load', function() {
 
     // When City Marker is clicked, info window will appear
     var infowindow = new google.maps.InfoWindow( {
-      content: travelled.name + travelled.image + travelled.description
+      content: travelled.name + travelled.image + travelled.description,
+      maxWidth: 400
     });
 
     google.maps.event.addListener(marker, 'click', function() {
