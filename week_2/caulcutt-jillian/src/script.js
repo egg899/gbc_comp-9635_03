@@ -1,7 +1,7 @@
 function initMap() {
-
+google.maps.event.addDomListener(window, 'load', function() {
   var myLatLng = {lat: 43.361876, lng: -79.774770};
-  
+
   var map = new google.maps.Map(document.getElementById('map'), {
     center: myLatLng,
     zoom: 15,
@@ -86,7 +86,7 @@ function initMap() {
       }
     ]
   });
-  
+
   var contentString = '<div id="content">'+
       '<div id="siteNotice">'+
       '</div>'+
@@ -100,7 +100,7 @@ function initMap() {
     content: contentString,
     maxWidth: 250
   });
-  
+
   var marker = new google.maps.Marker({
     position: myLatLng,
     map: map,
@@ -109,4 +109,5 @@ function initMap() {
   marker.addListener('click', function() {
     infowindow.open(map, marker);
   });
-  }
+});
+}
