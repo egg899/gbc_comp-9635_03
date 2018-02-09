@@ -70,7 +70,7 @@ if (status === google.maps.places.PlacesServiceStatus.OK) {
 
 
 
-      myMap.setCenter(marker.position),
+      myMap.setCenter(marker.getPosition()),
 //myMap.setZoom(12);
 
 infowindow.setContent('<div id="content">'+place.name + '<strong>'+loc.formatted_address+ '</strong>'+'</br></br>'+place.description+'</br></br>' +place.image+'</div>');
