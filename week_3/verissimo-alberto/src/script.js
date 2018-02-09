@@ -2,12 +2,14 @@
 google.maps.event.addDomListener(window, 'load', function(){
 
 var places=[
-  {name:'<h2>Porto, Portugal</h2>',
-    lat:'41.1622023',lng:'-8.656973'},
-    {name:'<h2>Madrid,Spain</h2>',lat:'40.4438122',lng:'-3.6378245'},
-    {name:'<h2>Paris,France</h2>',lat:'48.8589101',lng:'2.3120406'},
-    {name:'<h2>Ukraine</h2>',lat:'47.9855766',lng:'22.2123707'},
-    {name:'<h2>Italy</h2>',lat:'40.9401583',lng:'3.7241571'}
+  {name:'<h2>Porto Cathedral,Porto, Portugal</h2>',
+    lat:'41.142826',lng:'-8.6111836'},
+    {name:'<h2>Alcala Gate, Madrid,Spain</h2>',lat:'40.420056',lng:'-3.6884699'},
+    {name:'<h2>Eiffel Tower, Paris,France</h2>',lat:'48.85835',lng:'2.294525'},
+    {name:'<h2>Big Ben,London,UK</h2>',lat:'51.5007286',lng:'-0.124625'},
+    {name:'<h2>Roman Forum, Rome, Italy</h2>',lat:'41.8925473',lng:'12.4853655'},
+    {name:'<h2>Dracula Castle, Pennsylvania, Rumania</h2>',lat:'45.5147926',lng:'25.3670621'},
+    {name:'<h2>Parthenon, Acropolis, Athens, Greece</h2>',lat:'37.9714486',lng:'23.7267694'}
 
 
 ]
