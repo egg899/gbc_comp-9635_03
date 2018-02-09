@@ -1,23 +1,2 @@
-console.log(google)
-google.maps.event.addDomListener(window, 'load', function(){
-  console.log('page is loaded')
-  navigator.geolocation.getCurrentPosition(function(position){
-    console.log(position)
-    var map_canvas = document.getElementById('map-canvas')
-    var lat = position.coords.latitude
-    var lng = position.coords.longitude
-    console.log(lat, lng)
-    //add base longitude and latitude (starting)
-    var myLatLng = new google.maps.LatLng(lat, lng)
-    var myMap = new google.maps.Map(map_canvas, {
-      zoom: 15,
-      center: myLatLng,
-    })
-    //add a red marker thing for your location
-    new google.maps.Marker({
-      position: myLatLng,
-      map: myMap,
-    })
-    console.log(myLatLng)
-  })
-})
+//tried to convert script in body into seperate js file, would
+//not load map.  
