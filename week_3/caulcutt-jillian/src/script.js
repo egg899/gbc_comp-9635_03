@@ -67,9 +67,14 @@ google.maps.event.addDomListener(window, 'load', function() {
 
 		google.maps.event.addListener(marker, 'click', function ClickHandler() {
 		map.setCenter(marker.position)
-		map.setZoom(5)
+		map.setZoom(12)
 		infowindow.open(map, marker)
 		})
+
+		google.maps.event.addListener(infowindow, 'closeclick', function() {
+	      map.panTo(this.getPosition());
+	      map.setZoom(2);
+   		})
 	})
 
 	
