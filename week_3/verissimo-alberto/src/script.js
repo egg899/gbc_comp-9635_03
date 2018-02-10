@@ -69,6 +69,7 @@ setTimeout(function(){
 //Iterate a for loop through the array
       for (var i = 0; i < markers.length; i++) {
                 markers[i].setAnimation(null);
+
               }
               //Toggle function
               toggleBounce(this);
@@ -111,9 +112,17 @@ infowindow.setContent('<div id="content">'+place.name + '<strong>'+loc.formatted
 //function to toggle each individual Marker
   function toggleBounce(ele) {
     if (ele.getAnimation() !== null  ) {
+
       ele.setAnimation(null);
+
+
     } else {
       ele.setAnimation(google.maps.Animation.BOUNCE);
+      setTimeout(function(){
+        ele.setAnimation(null);
+      },1450);
+
+
     }
   }
 
