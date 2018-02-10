@@ -32,7 +32,7 @@ var mapOptions ={
 var markers = [];
   //For Each
 
-  places.forEach(function(place){
+  places.forEach(function(place, i){
 
 service.getDetails({
   placeId:place.id
@@ -40,18 +40,25 @@ service.getDetails({
 if (status === google.maps.places.PlacesServiceStatus.OK) {
     var latlng=new google.maps.LatLng(place.lat, place.lng);
 
-    var marker=new google.maps.Marker({
-      position:latlng,
-      //position: loc.geometry.location,
-      animation: google.maps.Animation.DROP,
-      map:myMap
-    });
+setTimeout(function(){
+  var marker=new google.maps.Marker({
+    position:latlng,
+    //position: loc.geometry.location,
+    animation: google.maps.Animation.DROP,
+    map:myMap
+  });
+
+  markers.push(marker);
 
 
 
 
 
-    markers.push(marker);
+
+
+
+
+
 
 
 
@@ -72,10 +79,16 @@ if (status === google.maps.places.PlacesServiceStatus.OK) {
 
       myMap.setCenter(marker.getPosition()),
 //myMap.setZoom(12);
-
+//infowindo starts
 infowindow.setContent('<div id="content">'+place.name + '<strong>'+loc.formatted_address+ '</strong>'+'</br></br>'+place.description+'</br></br>' +place.image+'</div>');
   infowindow.open(myMap, marker);
 
+//when I close the info windo through the 'X', it will stop animation
+  google.maps.event.addListener(infowindow, 'closeclick', function() {
+    marker.setAnimation(null);
+  });
+
+//this is for the google streetviw
   panorama = new google.maps.StreetViewPanorama(
              document.getElementById('view'), {
                position: marker.position,
@@ -89,18 +102,24 @@ infowindow.setContent('<div id="content">'+place.name + '<strong>'+loc.formatted
 
 
     });//click events for markers
+    }, i*200);//setTimeout
   }//if
 })//service getDetails and function
+
   });//places forEach
 
 //function to toggle each individual Marker
   function toggleBounce(ele) {
-    if (ele.getAnimation() !== null) {
+    if (ele.getAnimation() !== null  ) {
       ele.setAnimation(null);
     } else {
       ele.setAnimation(google.maps.Animation.BOUNCE);
     }
   }
+
+
+
+
 
 
 })//document
