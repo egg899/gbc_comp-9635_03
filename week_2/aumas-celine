@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Week 2
+</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+
+#map-canvas{
+  height: 300px;
+  width: 400px;
+  border: 1px solid black;
+  margin: 0 auto 0 auto;
+  margin-top: 100px;
+
+
+}
+
+.container{
+  width:1040px;
+  background-color: #FFF4EA;
+  margin:0 auto;
+  padding-bottom: 100px;
+}
+
+h1{
+  font-family: 'PT Sans Narrow', sans-serif;
+  text-align: center;
+}
+
+
+</style>
+
+
+</head>
+<body>
+
+<div class="container">
+<h1> This map shows the exact location of the house I grew up in.
+
+	<div id="map-canvas"></div>
+
+  </div>
+<script> 
+
+function initMap() {
+var location = {lat: 48.98808, lng:2.411766};
+
+var map = new google.maps.Map(document.getElementById("map-canvas"), {
+zoom:10,
+center: location
+});
+
+var marker = new google.maps.Marker({
+position: location,
+map:map
+});
+
+}
+
+</script>
+<script async defer src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyD9rABaf_KBbLEY9UI2wiwiOZ8SeFoAZBE&callback=initMap"></script>
+
+
+
+</body>
+
+
+
+
+
+
+</html>
