@@ -19,9 +19,20 @@ var place= response.response.venues;
   //  $.each(place, function(venue){
       console.log(venue);
 
-      var loction =venue.location
+      if(venue.contact.phone===undefined){
+        venue.contact.phone = 'Phone not available';
+      }
+
+       if(venue.location.address===undefined){
+         venue.location.address='Adress not available';
+
+     }
+
+
+
+      var location =venue.location
       var html ='<div class="float-right img-thumbnail">';
-      html+= '<a '+'target="_blank"'+'href='+venue.url +'>'+venue.name+'</a>'
+      html+= '<a '+'target="_blank"'+'href='+venue.url +'>'+'<strong>'+venue.name+'</strong>'+'</a>'
       html+='<br />'
       html+='<img src="'
       html+= 'https://maps.googleapis.com/maps/api/staticmap'
@@ -35,14 +46,34 @@ var place= response.response.venues;
       html+=venue.contact.phone
       html+='<br />'
       html+=venue.hereNow.summary
+      html+='<br />'
+      html+=venue.location.address+', '+venue.location.city
       html+='</div>'
-if(venue.contact.phone==='undefined'){
-  venue.contact.phone = 'not Available';
+
+if(venue.url===undefined){
+  var html ='<div class="float-right img-thumbnail">';
+  html+= '<strong>'+venue.name+'</strong>'
+  html+='<br />'
+  html+='<img src="'
+  html+= 'https://maps.googleapis.com/maps/api/staticmap'
+  html+='?zoom=15'
+  html+='&size=300x225'
+  html+='&maptype=roadmap'
+  html+='&center='+location.lat +','+location.lng
+  html+='&markers=' + encodeURIComponent('||')+ location.lat +','+ location.lng
+  html+='">'
+  html+='<br />'
+  html+=venue.contact.phone
+  html+='<br />'
+  html+=venue.hereNow.summary
+  html+='<br />'
+  html+=venue.location.address+', '+venue.location.city
+  html+='</div>'
 }
   //document.getElementsByClassName("container")[0].innerHTML +=html;
 
-$(".container").prepend(html).hide();
-$(".container").prepend(html).fadeIn();
+//$(".container").prepend(html).hide();
+$(".container").prepend(html);
 
 
 });
