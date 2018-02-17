@@ -36,17 +36,30 @@ var place= response.response.venues;
       html+='<br />'
       html+=venue.hereNow.summary
       html+='</div>'
-
+if(venue.contact.phone==='undefined'){
+  venue.contact.phone = 'not Available';
+}
   //document.getElementsByClassName("container")[0].innerHTML +=html;
 
-$(".container").prepend(html);
+$(".container").prepend(html).hide();
+$(".container").prepend(html).fadeIn();
+
 
 });
+
+
+
   }//success
 
 
 })//ajax
 
-});
+});//button
+
+$(".value").keypress(function(e){
+    if(e.which===13){
+      $("#btn").click();
+    }
+});//keypress
 
 });//docuement
