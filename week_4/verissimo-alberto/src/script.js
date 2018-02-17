@@ -9,7 +9,8 @@ $.ajax({
   type:"GET",
   dataType:"jsonp",
   cache:false,
-  url:"https://api.foursquare.com/v2/venues/search?client_id=UYXWDL4J1XESVFDVL4IQS4FKZJVLMCOF0SKNRRWRBBSC0LPE&client_secret=IFYVZGRK3EVI4DF1JEND5ZHC1K15NP5GAZ3NKXPOVCELZQSL&v=20180212&near=Toronto&query="+ value,
+  //url:"https://api.foursquare.com/v2/venues/search?client_id=UYXWDL4J1XESVFDVL4IQS4FKZJVLMCOF0SKNRRWRBBSC0LPE&client_secret=IFYVZGRK3EVI4DF1JEND5ZHC1K15NP5GAZ3NKXPOVCELZQSL&v=20180212&near=Toronto&query="+ value,
+url:"https://api.foursquare.com/v2/venues/search?client_id=DKBDKXUQ3BKJTG451SXK0BYNDUIZCUMHLNOT13NZ0DLRYFXB&client_secret=3V4RPTNGF0JJD032TY22X0BJYZTGGQ2QY0WUSPVBQD4FKBGD&v=20180212&near=Toronto&query="+ value,
   success:function(response){
 
 var place= response.response.venues;
@@ -18,19 +19,22 @@ var place= response.response.venues;
 
   //  $.each(place, function(venue){
       console.log(venue);
-
+var location =venue.location
       if(venue.contact.phone===undefined){
         venue.contact.phone = 'Phone not available';
       }
 
-       if(venue.location.address===undefined){
+       if(location.address===undefined){
          venue.location.address='Adress not available';
 
      }
 
+     if(location.hasOwnProperty('city')===false){
+       venue.location.city = '';
+     }
 
 
-      var location =venue.location
+
       var html ='<div class="float-right img-thumbnail">';
       html+= '<a '+'target="_blank"'+'href='+venue.url +'>'+'<strong>'+venue.name+'</strong>'+'</a>'
       html+='<br />'
@@ -43,12 +47,14 @@ var place= response.response.venues;
       html+='&markers=' + encodeURIComponent('||')+ location.lat +','+ location.lng
       html+='">'
       html+='<br />'
-      html+=venue.contact.phone
+      html+='<strong>'+'PHONE: '+'</strong>'+venue.contact.phone
       html+='<br />'
-      html+=venue.hereNow.summary
+      html+='<strong>'+'STATUS: '+'</strong>'+venue.hereNow.summary
       html+='<br />'
-      html+=venue.location.address+', '+venue.location.city
+      html+='<strong>'+"ADDRESS: "+'</strong>'+venue.location.address+', '+venue.location.city
       html+='</div>'
+
+      $(".container").prepend(html);
 
 if(venue.url===undefined){
   var html ='<div class="float-right img-thumbnail">';
@@ -63,17 +69,18 @@ if(venue.url===undefined){
   html+='&markers=' + encodeURIComponent('||')+ location.lat +','+ location.lng
   html+='">'
   html+='<br />'
-  html+=venue.contact.phone
+  html+='<strong>'+'PHONE: '+'</strong>'+venue.contact.phone
   html+='<br />'
-  html+=venue.hereNow.summary
+  html+='<strong>'+'STATUS: '+'</strong>'+venue.hereNow.summary
   html+='<br />'
-  html+=venue.location.address+', '+venue.location.city
+  html+='<strong>'+"ADDRESS: "+'</strong>'+venue.location.address+', '+venue.location.city
   html+='</div>'
+$(".container").append(html);
 }
   //document.getElementsByClassName("container")[0].innerHTML +=html;
 
 //$(".container").prepend(html).hide();
-$(".container").prepend(html);
+//$(".container").prepend(html);
 
 
 });
