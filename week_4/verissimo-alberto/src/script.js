@@ -54,7 +54,7 @@ var location =venue.location
       html+='<strong>'+"ADDRESS: "+'</strong>'+venue.location.address+', '+venue.location.city
       html+='</div>'
 
-      $(".container").prepend(html);
+    
 
 if(venue.url===undefined){
   var html ='<div class="float-right img-thumbnail">';
@@ -75,12 +75,12 @@ if(venue.url===undefined){
   html+='<br />'
   html+='<strong>'+"ADDRESS: "+'</strong>'+venue.location.address+', '+venue.location.city
   html+='</div>'
-$(".container").append(html);
+
 }
   //document.getElementsByClassName("container")[0].innerHTML +=html;
 
 //$(".container").prepend(html).hide();
-//$(".container").prepend(html);
+$(".container").prepend(html);
 
 
 });
