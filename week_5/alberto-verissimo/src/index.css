@@ -1,4 +1,17 @@
-html, body, #foursquare-map{
+html, body{
   height:100%;
   width:100%;
+}
+#foursquare-map{
+  float:left;
+  height:70%;
+  width:70%;
+}
+#view{
+
+  height:70%;
+  width:70%;
+}
+.clear{
+  clear:both;
 }
