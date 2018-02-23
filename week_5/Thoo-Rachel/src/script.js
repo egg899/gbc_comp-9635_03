@@ -5,6 +5,7 @@ $(document).ready(function(){
 		center: new google.maps.LatLng(43.6532, -79.3832), 
 	}
 	var map = new google.maps.Map(element,options)
+	var lastInfoWindow = null
 	$.ajax({
 		
 		dataType:'jsonp',
@@ -25,12 +26,14 @@ $(document).ready(function(){
 					map.setCenter(marker.position)
 					map.setZoom(10)
 					infowindow.open(map, marker)
+					if (lastInfoWindow) {
+						lastInfoWindow.close()
+					}
+					lastInfoWindow = infowindow
 				})
 				
 				google.maps.event.addListener(infowindow,'closeclick', function(){
-					map.panTo(this.getPosition())
-					map.setZoom(10)
-					infowindow.close()
+					lastInfoWindow = null
 				})
 				
 				google.maps.event.addListener(marker)
