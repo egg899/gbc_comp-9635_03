@@ -34,7 +34,7 @@ $.ajax({
   url:"https://api.foursquare.com/v2/venues/search?client_id=DKBDKXUQ3BKJTG451SXK0BYNDUIZCUMHLNOT13NZ0DLRYFXB&client_secret=3V4RPTNGF0JJD032TY22X0BJYZTGGQ2QY0WUSPVBQD4FKBGD&v=20180212&near=Toronto&query="+ val,
   success:function(response){
     //console.log(response);
-    //console.log(response.response.venues);
+    console.log(response.response.venues);
     var infowindow = new google.maps.InfoWindow({});//infowindow
     var markers =[];
       response.response.venues.forEach(function(venue, i){
@@ -51,22 +51,26 @@ setTimeout(function(){
 
 markers.push(marker);
 
-infowindow.setContent("<strong>"+venue.name +"</strong>"+"<br/>"+ venue.location.address
-);
 
 
-        marker.addListener('click', function(){
+
+  marker.addListener('click', function(){
           $("#view").show();
           infowindow.open(map, marker);
 
-          for (var i = 0; i < markers.length; i++) {
-                    markers[i].setAnimation(null);
+          for (var j = 0; j < markers.length; j++) {
+                    markers[j].setAnimation(null);
 
                   }
                   //Toggle function
                   toggleBounce(this);
 
-
+        infowindow.setContent('<a '+'target="_blank"'+'href='+venue.url +'>'+"<strong>"+venue.name +"</strong>"+"</a>"+"<br/>"+ venue.location.address
+);//content of the info window
+if(venue.url===undefined){
+  infowindow.setContent("<strong>"+venue.name +"</strong>"+"<br/>"+ venue.location.address
+);//content of the info window
+}
 
 
         infowindow.addListener('closeclick', function(){
