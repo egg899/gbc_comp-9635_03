@@ -2,16 +2,44 @@ html, body{
   height:100%;
   width:100%;
 }
+*{
+  padding:0;
+  margin:0;
+}
 #foursquare-map{
-  float:left;
+
   height:70%;
-  width:70%;
+  width:100%;
+  -webkit-transition: all 0.2s; /* Safari */
+    transition: all 0.2s;
 }
 #view{
 
   height:70%;
   width:70%;
+
+}
+.map-resized{
+  width:50%!important;
+  float:left;
+}
+
+.floating-panel{
+  width:50%!important;
+  float:right;
+
+  z-index:5;
+
+}
+
+#wrapper{
+  width:100%;
+  height:80%;
 }
 .clear{
   clear:both;
+}
+button{
+  padding:2px;
+  border-radius: 2px
 }

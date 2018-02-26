@@ -12,6 +12,8 @@ $("#btn").click(function(){
 
 val = $("input").val();
 $("#view").hide();
+$("#view").removeClass("floating-panel");
+$("#foursquare-map").removeClass("map-resized");
 
 var element = document.getElementById('foursquare-map');
 var options = {
@@ -76,6 +78,9 @@ if(venue.url===undefined){
         infowindow.addListener('closeclick', function(){
           map.panTo(this.getPosition());
           marker.setAnimation(null);
+          $("#view").removeClass("floating-panel");
+          $("#foursquare-map").removeClass("map-resized");
+          $("#view").hide();
         //  map.setZoom(12);
         });
 
@@ -91,7 +96,8 @@ if(venue.url===undefined){
                        }
                      });//panorama
 
-
+$("#view").addClass("floating-panel");
+$("#foursquare-map").addClass("map-resized");
 
         });//Event listener for marker
 },i*50)//setTiemeout
