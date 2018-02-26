@@ -8,6 +8,12 @@ $(document).ready(function(){
   var map = new google.maps.Map(element, options);
 var val;
 var panorama;
+
+$("input").keypress(function(e){
+         if(e.which===13){
+           $("#btn").click();
+         }
+       });
 $("#btn").click(function(){
 
 val = $("input").val();
@@ -22,6 +28,7 @@ var options = {
 }
 var map = new google.maps.Map(element, options);
 
+//Enter//
 
 
 
