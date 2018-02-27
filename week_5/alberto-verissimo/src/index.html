@@ -3,15 +3,26 @@
 <head>
 <title>Week 5</title>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9rABaf_KBbLEY9UI2wiwiOZ8SeFoAZBE&sensor=false"></script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9rABaf_KBbLEY9UI2wiwiOZ8SeFoAZBE&sensor=false" ></script>-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9rABaf_KBbLEY9UI2wiwiOZ8SeFoAZBE&libraries=places"></script>
+
+
 <script src="/script.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="/index.css" rel="stylesheet">
 </head>
 <body>
-  <input/><button id="btn">click</button>
+
+  <div class="text-center">
+  <input id="interest" size="35"/><input  id="places"  /><button  id="btn" class="btn btn-primary">Search</button>
 <br/>
 <br/>
-<button class="option">Pizza</button><button class="option">Beer</button><button class="option">Bar</button>
+
+<button class="option btn btn-primary">Food</button><button class="option btn btn-primary">Coffee</button><button class="option btn btn-primary">Clubs</button>
+</div><!--buttons and input-->
+<br/>
+<br/>
 <div id="wrapper">
   <div id="foursquare-map"></div><!--foursquare map-->
 <div id="view"></div>

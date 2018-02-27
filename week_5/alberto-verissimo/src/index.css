@@ -2,10 +2,7 @@ html, body{
   height:100%;
   width:100%;
 }
-*{
-  padding:0;
-  margin:0;
-}
+
 #foursquare-map{
 
   height:70%;
@@ -15,31 +12,37 @@ html, body{
 }
 #view{
 
+
   height:70%;
   width:70%;
 
-}
-.map-resized{
-  width:50%!important;
-  float:left;
+
+
 }
 
 .floating-panel{
   width:50%!important;
-  float:right;
+  float:left;
 
   z-index:5;
 
 }
 
+
+.map-resized{
+  width:50%!important;
+  float:left;
+
+}
+
+
+#btn, .option{
+  margin-left:10px;
+}
 #wrapper{
   width:100%;
   height:80%;
 }
 .clear{
   clear:both;
-}
-button{
-  padding:2px;
-  border-radius: 2px
 }
