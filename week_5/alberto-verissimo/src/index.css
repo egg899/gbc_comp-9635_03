@@ -34,7 +34,9 @@ html, body{
   float:left;
 
 }
-
+.red{
+  border:1px solid red;
+}
 
 #btn, .option{
   margin-left:10px;
