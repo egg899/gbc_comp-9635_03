@@ -8,7 +8,7 @@ $(document).ready(function(){
            }
          });
 $("#interest").click(function(){
-  $("input").val(" ");
+  $("#interest").val(" ");
 }
 
 );
