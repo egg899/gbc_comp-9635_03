@@ -201,6 +201,7 @@ $(".option").click(function(){
 
 
      val = $(this).text();
+     $("#interest").val("")
 //$("#btn").focus();
   try{
   if(!auto.geometry||$("#places").val()===""){
