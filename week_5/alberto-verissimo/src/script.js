@@ -86,10 +86,17 @@ try{
         console.log(response.response.venues);
         var infowindow = new google.maps.InfoWindow({});//infowindow
         var markers =[];
+        $("#description").html("");
           response.response.venues.forEach(function(venue, i){
             //console.log(venue.location.address)
+
             var venueLatLng=new google.maps.LatLng(venue.location.lat, venue.location.lng);
     setTimeout(function(){
+
+$("#description").append('<a  data-marker="' + i + '" href="#" class="info">'+venue.name+"</a>"+"<br/>");
+
+
+
 
 
             var marker = new google.maps.Marker({
@@ -98,7 +105,12 @@ try{
                 animation: google.maps.Animation.DROP
             })//marker
 
+
+
+
+
     markers.push(marker);
+
 
 
 
@@ -120,6 +132,7 @@ try{
       infowindow.setContent("<strong>"+venue.name +"</strong>"+"<br/>"+ venue.location.address
     );//content of the info window
     }
+
 
 
             infowindow.addListener('closeclick', function(){
@@ -150,10 +163,25 @@ try{
 
 
             });//Event listener for marker
+
+
+
     },i*50)//setTiemeout
+
+
+
+
+
+
+
           })//forEach
 
-
+          $(document).on('click','.info',function(){
+            var mid=$(this).data('marker');
+            console.log(infowindow);
+             infowindow.close();
+             google.maps.event.trigger(markers[mid], "click");
+          });
 
           //function to toggle each individual Marker
             function toggleBounce(ele) {
@@ -198,12 +226,11 @@ catch(e){
 $(".option").click(function(){
   var auto =autocomplete.getPlace();
 
-
+$("#interest").val("");
 
      val = $(this).text();
-     $("#interest").val("")
-//$("#btn").focus();
-  try{
+
+try{
   if(!auto.geometry||$("#places").val()===""){
     auto.geometry="";
     throw Error("Wrooong, location input should not be empty");
@@ -242,10 +269,17 @@ $(".option").click(function(){
         console.log(response.response.venues);
         var infowindow = new google.maps.InfoWindow({});//infowindow
         var markers =[];
+        $("#description").html("");
           response.response.venues.forEach(function(venue, i){
             //console.log(venue.location.address)
+
             var venueLatLng=new google.maps.LatLng(venue.location.lat, venue.location.lng);
     setTimeout(function(){
+
+$("#description").append('<a  data-marker="' + i + '" href="#" class="info">'+venue.name+"</a>"+"<br/>");
+
+
+
 
 
             var marker = new google.maps.Marker({
@@ -254,7 +288,12 @@ $(".option").click(function(){
                 animation: google.maps.Animation.DROP
             })//marker
 
+
+
+
+
     markers.push(marker);
+
 
 
 
@@ -276,6 +315,7 @@ $(".option").click(function(){
       infowindow.setContent("<strong>"+venue.name +"</strong>"+"<br/>"+ venue.location.address
     );//content of the info window
     }
+
 
 
             infowindow.addListener('closeclick', function(){
@@ -306,10 +346,25 @@ $(".option").click(function(){
 
 
             });//Event listener for marker
+
+
+
     },i*50)//setTiemeout
+
+
+
+
+
+
+
           })//forEach
 
-
+          $(document).on('click','.info',function(){
+            var mid=$(this).data('marker');
+            console.log(infowindow);
+             infowindow.close();
+             google.maps.event.trigger(markers[mid], "click");
+          });
 
           //function to toggle each individual Marker
             function toggleBounce(ele) {
@@ -327,17 +382,18 @@ $(".option").click(function(){
 
               }
             }
-  $("#places").removeClass("red");
-  // $("#places").css({ "box-shadow": "0 0 3px #CC0000"});
+$("#places").removeClass("red");
+// $("#places").css({ "box-shadow": "0 0 3px #CC0000"});
       },//success
     })//ajax
   }//else
-  }//try
+}//try
 
-  catch(e){
+catch(e){
   alert(e);
   $("#places").addClass("red");
-  }
+}
+
 
 
 
