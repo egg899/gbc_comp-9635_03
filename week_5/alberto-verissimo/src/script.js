@@ -80,7 +80,8 @@ try{
 
       dataType:'jsonp',
       cache:false,
-      url:"https://api.foursquare.com/v2/venues/search?client_id=DKBDKXUQ3BKJTG451SXK0BYNDUIZCUMHLNOT13NZ0DLRYFXB&client_secret=3V4RPTNGF0JJD032TY22X0BJYZTGGQ2QY0WUSPVBQD4FKBGD&v=20180212&near="+auto.name+"&query="+ val,
+      // url:"https://api.foursquare.com/v2/venues/search?client_id=DKBDKXUQ3BKJTG451SXK0BYNDUIZCUMHLNOT13NZ0DLRYFXB&client_secret=3V4RPTNGF0JJD032TY22X0BJYZTGGQ2QY0WUSPVBQD4FKBGD&v=20180212&near="+auto.name+"&query="+ val,
+      url:"https://api.foursquare.com/v2/venues/search?client_id=UYXWDL4J1XESVFDVL4IQS4FKZJVLMCOF0SKNRRWRBBSC0LPE&client_secret=IFYVZGRK3EVI4DF1JEND5ZHC1K15NP5GAZ3NKXPOVCELZQSL&v=20180212&near="+auto.name+"&query="+ val,
       success:function(response){
         //console.log(response);
         //console.log(response.response.venues);
@@ -88,15 +89,38 @@ try{
         var markers =[];
         $("#description").html("");
           response.response.venues.forEach(function(venue, i){
+            //console.log(venue.id);
             //console.log(venue.location.address)
 //console.log(venue.categories[0].icon.prefix+"64"+venue.categories[0].icon.suffix);
- logo=venue.categories[0].icon.prefix+"64"+venue.categories[0].icon.suffix;
+
+///Ajax for the Phots/////
+            $.ajax({
+              type:'GET',
+              dataType:'jsonp',
+              cache:false,
+              url:"https://api.foursquare.com/v2/venues/"+venue.id+"/photos?limit=9&client_id=UYXWDL4J1XESVFDVL4IQS4FKZJVLMCOF0SKNRRWRBBSC0LPE&client_secret=IFYVZGRK3EVI4DF1JEND5ZHC1K15NP5GAZ3NKXPOVCELZQSL&v=20131016",
+              success:function(photo){
+            //console.log(photo.response.photos.items[1].prefix+ '60x100' +photo.response.photos.items[1].suffix);
+              logo=photo.response.photos.items[1].prefix+ '60x90' +photo.response.photos.items[1].suffix;
+
+            $("#description").append('<div class="well">'+'<div class="col-sm-2">'+"<img src= "+logo+">"+'</div>'+'<a  data-marker="' + i + '" href="#" class="info">'+venue.name+"</a>"+"<br/>"+venue.location.address+"<br/>"
+            + venue.contact.formattedPhone+"<br/><br/>"+"</div>");
+
+
+
+}//photo success
+  })//photo
+
+
+ //logo=photo.response.photos.items[1].prefix+ '60x100' +photo.response.photos.items[1].suffix;
+ //logo=venue.categories[0].icon.prefix+"64"+venue.categories[0].icon.suffix;
             var venueLatLng=new google.maps.LatLng(venue.location.lat, venue.location.lng);
+
+
     setTimeout(function(){
 
 
-$("#description").append('<div class="well">'+'<div class="col-sm-2">'+"<img src= "+logo+">"+'</div>'+'<a  data-marker="' + i + '" href="#" class="info">'+venue.name+"</a>"+"<br/>"+venue.location.address+"<br/>"
-+ venue.contact.formattedPhone+"<br/><br/>"+"</div>");
+
 
 
 
@@ -229,8 +253,8 @@ catch(e){
 $(".option").click(function(){
   var auto =autocomplete.getPlace();
 
-$("#interest").val("");
 
+$("#interest").val("");
      val = $(this).text();
 
 try{
@@ -266,23 +290,48 @@ try{
 
       dataType:'jsonp',
       cache:false,
-      url:"https://api.foursquare.com/v2/venues/search?client_id=DKBDKXUQ3BKJTG451SXK0BYNDUIZCUMHLNOT13NZ0DLRYFXB&client_secret=3V4RPTNGF0JJD032TY22X0BJYZTGGQ2QY0WUSPVBQD4FKBGD&v=20180212&near="+auto.name+"&query="+ val,
+      // url:"https://api.foursquare.com/v2/venues/search?client_id=DKBDKXUQ3BKJTG451SXK0BYNDUIZCUMHLNOT13NZ0DLRYFXB&client_secret=3V4RPTNGF0JJD032TY22X0BJYZTGGQ2QY0WUSPVBQD4FKBGD&v=20180212&near="+auto.name+"&query="+ val,
+      url:"https://api.foursquare.com/v2/venues/search?client_id=UYXWDL4J1XESVFDVL4IQS4FKZJVLMCOF0SKNRRWRBBSC0LPE&client_secret=IFYVZGRK3EVI4DF1JEND5ZHC1K15NP5GAZ3NKXPOVCELZQSL&v=20180212&near="+auto.name+"&query="+ val,
       success:function(response){
         //console.log(response);
-        console.log(response.response.venues);
+        //console.log(response.response.venues);
         var infowindow = new google.maps.InfoWindow({});//infowindow
         var markers =[];
         $("#description").html("");
           response.response.venues.forEach(function(venue, i){
+            //console.log(venue.id);
             //console.log(venue.location.address)
+//console.log(venue.categories[0].icon.prefix+"64"+venue.categories[0].icon.suffix);
 
-            // logo=venue.categories[0].icon.prefix+"64"+venue.categories[0].icon.suffix;
-                        var venueLatLng=new google.maps.LatLng(venue.location.lat, venue.location.lng);
-                setTimeout(function(){
+///Ajax for the Phots/////
+            $.ajax({
+              type:'GET',
+              dataType:'jsonp',
+              cache:false,
+              url:"https://api.foursquare.com/v2/venues/"+venue.id+"/photos?limit=9&client_id=UYXWDL4J1XESVFDVL4IQS4FKZJVLMCOF0SKNRRWRBBSC0LPE&client_secret=IFYVZGRK3EVI4DF1JEND5ZHC1K15NP5GAZ3NKXPOVCELZQSL&v=20131016",
+              success:function(photo){
+            //console.log(photo.response.photos.items[1].prefix+ '60x100' +photo.response.photos.items[1].suffix);
+              logo=photo.response.photos.items[1].prefix+ '60x90' +photo.response.photos.items[1].suffix;
 
-
-            $("#description").append('<div class="well">'+'<div class="col-sm-2">'+"<img src= "+'#'+">"+'</div>'+'<a  data-marker="' + i + '" href="#" class="info">'+venue.name+"</a>"+"<br/>"+venue.location.address+"<br/>"
+            $("#description").append('<div class="well">'+'<div class="col-sm-2">'+"<img src= "+logo+">"+'</div>'+'<a  data-marker="' + i + '" href="#" class="info">'+venue.name+"</a>"+"<br/>"+venue.location.address+"<br/>"
             + venue.contact.formattedPhone+"<br/><br/>"+"</div>");
+
+
+
+}//photo success
+  })//photo
+
+
+ //logo=photo.response.photos.items[1].prefix+ '60x100' +photo.response.photos.items[1].suffix;
+ //logo=venue.categories[0].icon.prefix+"64"+venue.categories[0].icon.suffix;
+            var venueLatLng=new google.maps.LatLng(venue.location.lat, venue.location.lng);
+
+
+    setTimeout(function(){
+
+
+
+
 
 
 
@@ -398,7 +447,6 @@ catch(e){
   alert(e);
   $("#places").addClass("red");
 }
-
 
 
 
