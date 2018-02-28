@@ -52,3 +52,7 @@ html, body{
 .clear{
   clear:both;
 }
+
+.container{
+  width:60%!important;
+}
