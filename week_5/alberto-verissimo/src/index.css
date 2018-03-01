@@ -3,6 +3,19 @@ html, body{
   width:100%;
 }
 
+body{
+  background: linear-gradient(
+      rgba(49, 95, 224, 0.45),
+      rgba(49, 95, 224, 0.45)
+    ),url('http://www.nlc.org/sites/default/files/2017-05/Website%20Hero%20Image-01_0.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+
+}
+
+
 #foursquare-map{
 
   height:70%;

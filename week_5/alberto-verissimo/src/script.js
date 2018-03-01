@@ -89,19 +89,21 @@ try{
         var markers =[];
         $("#description").html("");
           response.response.venues.forEach(function(venue, i){
+            //console.log(venue);
             //console.log(venue.id);
             //console.log(venue.location.address)
 //console.log(venue.categories[0].icon.prefix+"64"+venue.categories[0].icon.suffix);
 
-///Ajax for the Phots/////
+///Ajax for the Photos and more information/////
             $.ajax({
               type:'GET',
               dataType:'jsonp',
               cache:false,
-              url:"https://api.foursquare.com/v2/venues/"+venue.id+"/photos?limit=9&client_id=UYXWDL4J1XESVFDVL4IQS4FKZJVLMCOF0SKNRRWRBBSC0LPE&client_secret=IFYVZGRK3EVI4DF1JEND5ZHC1K15NP5GAZ3NKXPOVCELZQSL&v=20131016",
-              success:function(photo){
+              url:"https://api.foursquare.com/v2/venues/"+venue.id+"?&client_id=UYXWDL4J1XESVFDVL4IQS4FKZJVLMCOF0SKNRRWRBBSC0LPE&client_secret=IFYVZGRK3EVI4DF1JEND5ZHC1K15NP5GAZ3NKXPOVCELZQSL&v=20131016",
+              success:function(data){
+                console.log(data.response.venue.photos.groups[0].items[0].prefix+'60x100'+data.response.venue.photos.groups[0].items[0].suffix);
             //console.log(photo.response.photos.items[1].prefix+ '60x100' +photo.response.photos.items[1].suffix);
-              logo=photo.response.photos.items[1].prefix+ '60x90' +photo.response.photos.items[1].suffix;
+              logo=data.response.venue.photos.groups[0].items[0].prefix+'60x90'+data.response.venue.photos.groups[0].items[0].suffix;
 
             $("#description").append('<div class="well">'+'<div class="col-sm-2">'+"<img src= "+logo+">"+'</div>'+'<a  data-marker="' + i + '" href="#" class="info">'+venue.name+"</a>"+"<br/>"+venue.location.address+"<br/>"
             + venue.contact.formattedPhone+"<br/><br/>"+"</div>");
@@ -110,6 +112,11 @@ try{
 
 }//photo success
   })//photo
+
+
+
+
+
 
 
  //logo=photo.response.photos.items[1].prefix+ '60x100' +photo.response.photos.items[1].suffix;
@@ -303,15 +310,16 @@ try{
             //console.log(venue.location.address)
 //console.log(venue.categories[0].icon.prefix+"64"+venue.categories[0].icon.suffix);
 
-///Ajax for the Phots/////
+///Ajax for the Photos and more information/////
             $.ajax({
               type:'GET',
               dataType:'jsonp',
               cache:false,
-              url:"https://api.foursquare.com/v2/venues/"+venue.id+"/photos?limit=9&client_id=UYXWDL4J1XESVFDVL4IQS4FKZJVLMCOF0SKNRRWRBBSC0LPE&client_secret=IFYVZGRK3EVI4DF1JEND5ZHC1K15NP5GAZ3NKXPOVCELZQSL&v=20131016",
-              success:function(photo){
+              url:"https://api.foursquare.com/v2/venues/"+venue.id+"?&client_id=UYXWDL4J1XESVFDVL4IQS4FKZJVLMCOF0SKNRRWRBBSC0LPE&client_secret=IFYVZGRK3EVI4DF1JEND5ZHC1K15NP5GAZ3NKXPOVCELZQSL&v=20131016",
+              success:function(data){
+                console.log(data.response.venue.photos.groups[0].items[0].prefix+'60x100'+data.response.venue.photos.groups[0].items[0].suffix);
             //console.log(photo.response.photos.items[1].prefix+ '60x100' +photo.response.photos.items[1].suffix);
-              logo=photo.response.photos.items[1].prefix+ '60x90' +photo.response.photos.items[1].suffix;
+              logo=data.response.venue.photos.groups[0].items[0].prefix+'60x90'+data.response.venue.photos.groups[0].items[0].suffix;
 
             $("#description").append('<div class="well">'+'<div class="col-sm-2">'+"<img src= "+logo+">"+'</div>'+'<a  data-marker="' + i + '" href="#" class="info">'+venue.name+"</a>"+"<br/>"+venue.location.address+"<br/>"
             + venue.contact.formattedPhone+"<br/><br/>"+"</div>");
