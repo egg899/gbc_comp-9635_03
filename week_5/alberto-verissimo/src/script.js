@@ -40,12 +40,16 @@ var logo;
        autocomplete.bindTo('bounds', map);
 
 
-$("#btn").click(function(){
+
+
+
+
+function myFunction(){
   var auto =autocomplete.getPlace();
 
 
 
-     val = $("#interest").val();
+
 
 try{
   if(!auto.geometry||$("#places").val()===""){
@@ -246,7 +250,13 @@ catch(e){
   $("#places").addClass("red");
 }
 
+}//myFunction
 
+
+$("#btn").click(function(){
+  val = $("#interest").val();
+
+myFunction();
 
 
 
@@ -259,12 +269,13 @@ catch(e){
 
 ////////OPTIONS//////
 $(".option").click(function(){
-  var auto =autocomplete.getPlace();
+
 
 
 $("#interest").val("");
      val = $(this).text();
 
+<<<<<<< HEAD
 try{
   if(!auto.geometry||$("#places").val()===""){
     auto.geometry="";
@@ -407,57 +418,12 @@ try{
        $("#view").addClass("floating-panel");
        $("#foursquare-map").addClass("map-resized");
 
+=======
+var auto =autocomplete.getPlace();
+>>>>>>> 2d6960056e00f76b517ffbdd4838d0b14d89a843
 
 
-            });//Event listener for marker
-
-
-
-    },i*50)//setTiemeout
-
-
-
-
-
-
-
-          })//forEach
-
-          $(document).on('click','.info',function(){
-            var mid=$(this).data('marker');
-            console.log(infowindow);
-             infowindow.close();
-             google.maps.event.trigger(markers[mid], "click");
-          });
-
-          //function to toggle each individual Marker
-            function toggleBounce(ele) {
-              if (ele.getAnimation() !== null  ) {
-
-                ele.setAnimation(null);
-
-
-              } else {
-                ele.setAnimation(google.maps.Animation.BOUNCE);
-                setTimeout(function(){
-                  ele.setAnimation(null);
-                },1450);
-
-
-              }
-            }
-$("#places").removeClass("red");
-// $("#places").css({ "box-shadow": "0 0 3px #CC0000"});
-      },//success
-    })//ajax
-  }//else
-}//try
-
-catch(e){
-  alert(e);
-  $("#places").addClass("red");
-}
-
+myFunction();
 
 
 })//option click
