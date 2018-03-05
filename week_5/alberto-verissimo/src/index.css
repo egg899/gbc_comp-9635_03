@@ -25,7 +25,7 @@ body{
 #view{
 
 
-  height:70%;
+  height:100%;
   width:70%;
 
 
@@ -68,7 +68,7 @@ display: inline;
 }
 #interest,#places{
 height:30px;
-width:200px;
+width:20%;
 -webkit-transition: width 0.4s ease-in-out;
  transition: width 0.4s ease-in-out;
 }
