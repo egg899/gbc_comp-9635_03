@@ -21,7 +21,14 @@ $("#places").click(function(){
 
                   }
                 });
-
+//console.log($(".text-center").children());
+var length=$(".text-center").children().length
+                var delay=0;
+                window.setInterval(function(){
+                  if(delay<length-2){
+                    $('button, input').eq(delay++).addClass("slideDown");
+                  }
+                },300)//window.setInterval
 
 
   var element = document.getElementById('foursquare-map');
@@ -70,7 +77,7 @@ try{
     }
      map = new google.maps.Map(element, options);
 
-    //Enter//
+    //Intro//
 
 
 
@@ -84,8 +91,8 @@ try{
 
       dataType:'jsonp',
       cache:false,
-       url:"https://api.foursquare.com/v2/venues/search?client_id=DKBDKXUQ3BKJTG451SXK0BYNDUIZCUMHLNOT13NZ0DLRYFXB&client_secret=3V4RPTNGF0JJD032TY22X0BJYZTGGQ2QY0WUSPVBQD4FKBGD&v=20180212&near="+auto.name+"&query="+ val,
-      //url:"https://api.foursquare.com/v2/venues/search?client_id=UYXWDL4J1XESVFDVL4IQS4FKZJVLMCOF0SKNRRWRBBSC0LPE&client_secret=IFYVZGRK3EVI4DF1JEND5ZHC1K15NP5GAZ3NKXPOVCELZQSL&v=20180212&near="+auto.name+"&query="+ val,
+      // url:"https://api.foursquare.com/v2/venues/search?client_id=DKBDKXUQ3BKJTG451SXK0BYNDUIZCUMHLNOT13NZ0DLRYFXB&client_secret=3V4RPTNGF0JJD032TY22X0BJYZTGGQ2QY0WUSPVBQD4FKBGD&v=20180212&near="+auto.name+"&query="+ val,
+      url:"https://api.foursquare.com/v2/venues/search?client_id=UYXWDL4J1XESVFDVL4IQS4FKZJVLMCOF0SKNRRWRBBSC0LPE&client_secret=IFYVZGRK3EVI4DF1JEND5ZHC1K15NP5GAZ3NKXPOVCELZQSL&v=20180212&near="+auto.name+"&query="+ val,
       success:function(response){
         //console.log(response);
         //console.log(response.response.venues);
@@ -103,15 +110,21 @@ try{
               type:'GET',
               dataType:'jsonp',
               cache:false,
-              url:"https://api.foursquare.com/v2/venues/"+venue.id+"?&client_id=DKBDKXUQ3BKJTG451SXK0BYNDUIZCUMHLNOT13NZ0DLRYFXB&client_secret=3V4RPTNGF0JJD032TY22X0BJYZTGGQ2QY0WUSPVBQD4FKBGD&v=20131016",
-              //url:"https://api.foursquare.com/v2/venues/"+venue.id+"?&client_id=UYXWDL4J1XESVFDVL4IQS4FKZJVLMCOF0SKNRRWRBBSC0LPE&client_secret=IFYVZGRK3EVI4DF1JEND5ZHC1K15NP5GAZ3NKXPOVCELZQSL&v=20131016",
+              //url:"https://api.foursquare.com/v2/venues/"+venue.id+"?&client_id=DKBDKXUQ3BKJTG451SXK0BYNDUIZCUMHLNOT13NZ0DLRYFXB&client_secret=3V4RPTNGF0JJD032TY22X0BJYZTGGQ2QY0WUSPVBQD4FKBGD&v=20131016",
+              url:"https://api.foursquare.com/v2/venues/"+venue.id+"?&client_id=UYXWDL4J1XESVFDVL4IQS4FKZJVLMCOF0SKNRRWRBBSC0LPE&client_secret=IFYVZGRK3EVI4DF1JEND5ZHC1K15NP5GAZ3NKXPOVCELZQSL&v=20131016",
               success:function(data){
-                console.log(data.response.venue.photos.groups[0].items[0].prefix+'60x100'+data.response.venue.photos.groups[0].items[0].suffix);
+                console.log(data.response.venue);
             //console.log(photo.response.photos.items[1].prefix+ '60x100' +photo.response.photos.items[1].suffix);
               logo=data.response.venue.photos.groups[0].items[0].prefix+'60x90'+data.response.venue.photos.groups[0].items[0].suffix;
 
-            $("#description").append('<div class="well">'+'<div class="col-sm-2">'+"<img src= "+logo+">"+'</div>'+'<a  data-marker="' + i + '" href="#" class="info">'+venue.name+"</a>"+"<br/>"+venue.location.address+"<br/>"
-            + venue.contact.formattedPhone+"<br/><br/>"+"</div>");
+
+            $("#description").append('<div class="well">'+'<div class="row">'+
+            '<div class="col-sm-3">'+"<img src= "+logo+">"+'</div>'+
+            '<div class="col-sm-3">'+'<a  data-marker="' + i + '" href="#" class="info">'+venue.name+"</a>"+"<br/>"+venue.location.address+"<br/>"
+             + venue.contact.formattedPhone+"<br/>"+'</div>'+
+            '<div class="col-sm-3 menu">'+"<h2 class='title'>"+"Menu"+"</h2>"+"<a "+'target=_blank"'+" href="+venue.url+">"+"<img height='42' width='42' src= "+"https://cdn2.iconfinder.com/data/icons/perfect-flat-icons-2/512/Food_vector_icon_restaurant_pixel_perfect.png"+">"+"</a>"+'</div>'+
+            '</div>'+
+            '</div>');
 
 
 
