@@ -134,7 +134,7 @@ if(venue.url){
 
 
 
-if(venue.url===undefined ){
+if(venue.url===undefined){
   $("#description").append('<div class="well">'+'<div class="row">'+
   '<div class="col-sm-3">'+"<img src= "+logo+">"+'</div>'+
   '<div class="col-sm-3">'+'<a  data-marker="' + i + '" href="#" class="info">'+venue.name+"</a>"+"<br/>"+venue.location.address+"<br/>"
